@@ -1,0 +1,24 @@
+@baseURL = http://localhost:3000/
+@contentType = application/json
+
+###
+
+POST {{baseURL}}users
+Content-Type: {{contentType}}
+
+{
+	"name": "Teste",
+	"email": "teste.123@gmail.com",
+	"admin": false
+}
+
+###
+
+POST {{baseURL}}tags
+Content-Type: {{contentType}}
+
+{
+	"name": "liderança"
+}
+
+###
