@@ -16,7 +16,7 @@ Content-Type: {{contentType}}
 
 ###
 
-#CREATE TAG
+# CREATE TAG
 POST {{baseURL}}tags
 Content-Type: {{contentType}}
 
@@ -26,7 +26,7 @@ Content-Type: {{contentType}}
 
 ###
 
-#AUTHENTICATE USER
+# AUTHENTICATE USER
 POST {{baseURL}}login
 Content-Type: {{contentType}}
 
@@ -37,7 +37,7 @@ Content-Type: {{contentType}}
 
 ###
 
-#CREATE COMPLIMENT
+# CREATE COMPLIMENT
 POST {{baseURL}}compliments
 Content-Type: {{contentType}}
 
