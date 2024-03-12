@@ -3,22 +3,49 @@
 
 ###
 
+# CREATE USER
 POST {{baseURL}}users
 Content-Type: {{contentType}}
 
 {
-	"name": "Teste",
-	"email": "teste.123@gmail.com",
-	"admin": false
+	"name": "admin",
+	"email": "admin@admin.com",
+	"password": "12345",
+	"admin": true
 }
 
 ###
 
+#CREATE TAG
 POST {{baseURL}}tags
 Content-Type: {{contentType}}
 
 {
 	"name": "liderança"
+}
+
+###
+
+#AUTHENTICATE USER
+POST {{baseURL}}login
+Content-Type: {{contentType}}
+
+{
+	"email": "filipe@filipe.com",
+	"password": "12345"
+}
+
+###
+
+#CREATE COMPLIMENT
+POST {{baseURL}}compliments
+Content-Type: {{contentType}}
+
+{
+	"tag_id": "5b7121c8-b2ed-480e-b19a-7eff68451627",
+	"user_sender": "e0a08890-ecf8-4ee9-a5d2-4ac03474be81",
+	"user_receiver": "26fa7027-4026-43e7-bf35-181aec257cf1",
+	"message": "Obrigada pela ajuda na comunidade :)"
 }
 
 ###
