@@ -1,5 +1,6 @@
 @baseURL = http://localhost:3000/
 @contentType = application/json
+@authorization = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZpbGlwZUBmaWxpcGUuY29tIiwiaWF0IjoxNzEwMzUzMTkwLCJleHAiOjE3MTA0Mzk1OTAsInN1YiI6ImUwYTA4ODkwLWVjZjgtNGVlOS1hNWQyLTRhYzAzNDc0YmU4MiJ9.mVqOGAKnki_B31tSk3bALB3qN43vE90UWkIt_ERB4oM
 
 ###
 
@@ -18,10 +19,11 @@ Content-Type: {{contentType}}
 
 # CREATE TAG
 POST {{baseURL}}tags
+Authorization: {{authorization}}
 Content-Type: {{contentType}}
 
 {
-	"name": "liderança"
+	"name": "otimista"
 }
 
 ###
@@ -39,13 +41,41 @@ Content-Type: {{contentType}}
 
 # CREATE COMPLIMENT
 POST {{baseURL}}compliments
+Authorization: {{authorization}}
 Content-Type: {{contentType}}
 
 {
 	"tag_id": "5b7121c8-b2ed-480e-b19a-7eff68451627",
-	"user_sender": "e0a08890-ecf8-4ee9-a5d2-4ac03474be81",
 	"user_receiver": "26fa7027-4026-43e7-bf35-181aec257cf1",
-	"message": "Obrigada pela ajuda na comunidade :)"
+	"message": "Você é sensacional!"
 }
+
+###
+
+# LIST USER SEND COMPLIMENTS
+GET {{baseURL}}users/compliments/send
+Authorization: {{authorization}}
+Content-Type: {{contentType}}
+
+###
+
+# LIST USER RECEIVE COMPLIMENTS
+GET {{baseURL}}users/compliments/receive
+Authorization: {{authorization}}
+Content-Type: {{contentType}}
+
+###
+
+# LIST TAGS
+GET {{baseURL}}tags
+Authorization: {{authorization}}
+Content-Type: {{contentType}}
+
+###
+
+# LIST USERS
+GET {{baseURL}}users
+Authorization: {{authorization}}
+Content-Type: {{contentType}}
 
 ###
